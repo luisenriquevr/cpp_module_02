@@ -6,7 +6,7 @@
 #    By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/22 18:00:26 by lvarela           #+#    #+#              #
-#    Updated: 2022/06/23 11:34:14 by lvarela          ###   ########.fr        #
+#    Updated: 2022/06/27 16:35:05 by lvarela          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC		:=	c++
 CPPSTD	:=	-std=c++98
 FLAGS	:=	-Wall -Werror -Wextra
 RM		:=	rm -rf
-NAME	:=	Karen-filter
+NAME	:=	My\ First\ Orthodox
 
 all		:	$(NAME)
 
