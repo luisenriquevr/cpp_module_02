@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 15:28:51 by lvarela           #+#    #+#             */
-/*   Updated: 2023/01/16 19:08:20 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/02/23 20:32:26 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@
 class	Fixed {
 	private:
 		int					_value;
-		static const int	_fractionalBits = 8;
+		static const int	_bits = 8;
 	public:
 		Fixed(void);
 		Fixed(const Fixed &);
 		Fixed & operator=(const Fixed &);
 		~Fixed();
-		void				setRawBits(int const raw);
-		int					getRawBits(void) const;
+		void				setFixedPointNumber(int const raw);
+		int					getFixedPointNumber(void) const;
 };
 
 #endif
