@@ -40,10 +40,34 @@ Fixed::Fixed(const Fixed &copy) {
 }
 
 // Assignation operator overload
-Fixed &	Fixed::operator=(const Fixed & copy) {
+Fixed &	Fixed::operator=(const Fixed &copy) {
 	std::cout << "Assignation operator called" << std::endl;
-	this->_value = copy.getFixedPointNumber();
+	this->_value = copy.getRawBits();
 	return *this;
+}
+
+bool	Fixed::operator>(const Fixed &other) const {
+	return this->getRawBits() > other.getRawBits();
+}
+
+bool	Fixed::operator<(const Fixed &) const {
+
+}
+
+bool	Fixed::operator>=(const Fixed &) const {
+
+}
+
+bool	Fixed::operator<=(const Fixed &) const {
+
+}
+
+bool	Fixed::operator==(const Fixed &) const {
+
+}
+
+bool	Fixed::operator!=(const Fixed &) const {
+	
 }
 
 // Destructor
@@ -53,14 +77,14 @@ Fixed::~Fixed(void) {
 
 /* Setter function */
 
-void	Fixed::setFixedPointNumber(const int raw) {
+void	Fixed::setRawBits(const int raw) {
 	this->_value = raw;
 }
 
 /* Getter function */
 
-int		Fixed::getFixedPointNumber(void) const {
-	std::cout << "getFixedPointNumber called" << std::endl;
+int		Fixed::getRawBits(void) const {
+	std::cout << "getRawBits called" << std::endl;
 	return this->_value;
 }
 
@@ -77,7 +101,7 @@ int		Fixed::toInt(void) const {
 	return (this->_value << this->_bits);
 }
 
-std::ostream & operator<<(std::ostream & out, const Fixed & value) {
-	out << value.toFloat();
-	return out;
+std::ostream & operator<<(std::ostream &COUT, const Fixed &fixed) {
+	COUT << fixed.toFloat();
+	return COUT;
 }

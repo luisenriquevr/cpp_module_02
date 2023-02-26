@@ -20,19 +20,21 @@ class	Fixed {
 	private:
 		int					_value;
 		static const int	_bits = 8;
+
 	public:
 		Fixed(void);
 		Fixed(const int);
 		Fixed(const float);
-		Fixed(const Fixed &);
-		Fixed & operator=(const Fixed &);
+		Fixed(const Fixed &toCopy);
+		Fixed & operator=(const Fixed &toCopy);
 		~Fixed();
-		void				setFixedPointNumber(int const);
-		int					getFixedPointNumber(void) const;
+
+		void				setRawBits(int const raw);
+		int					getRawBits(void) const;
 		float				toFloat(void) const;
 		int					toInt(void) const;
 };
 
-std::ostream & operator<<(std::ostream &, const Fixed &);
+std::ostream & operator<<(std::ostream &COUT, const Fixed &fixed);
 
 #endif

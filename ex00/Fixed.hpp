@@ -19,13 +19,15 @@ class	Fixed {
 	private:
 		int					_value;
 		static const int	_bits = 8;
+
 	public:
 		Fixed(void);
-		Fixed(const Fixed &);
-		Fixed & operator=(const Fixed &);
+		Fixed(const Fixed &toCopy);
+		Fixed & operator=(const Fixed &toCopy);
 		~Fixed();
-		void				setFixedPointNumber(int const raw);
-		int					getFixedPointNumber(void) const;
+
+		void				setRawBits(int const raw);
+		int					getRawBits(void) const;
 };
 
 #endif

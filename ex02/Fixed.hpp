@@ -24,32 +24,38 @@ class	Fixed {
 		Fixed(void);
 		Fixed(const int);
 		Fixed(const float);
-		Fixed(const Fixed &);
-		Fixed &					operator=(const Fixed &);
+		Fixed(const Fixed &toCopy);
+		Fixed &					operator=(const Fixed &toCopy);
 		~Fixed();
-		void					setFixedPointNumber(int const);
-		int						getFixedPointNumber(void) const;
+
+		void					setRawBits(int const raw);
+		int						getRawBits(void) const;
 		float					toFloat(void) const;
 		int						toInt(void) const;
-		bool					operator>(const Fixed &) const;
-		bool					operator<(const Fixed &) const;
-		bool					operator>=(const Fixed &) const;
-		bool					operator==(const Fixed &) const;
-		bool					operator!=(const Fixed &) const;
-		Fixed &					operator+(const Fixed &);
-		Fixed &					operator-(const Fixed &);
-		Fixed &					operator*(const Fixed &);
-		Fixed &					operator/(const Fixed &);
+
+		bool					operator>(const Fixed &toCompare) const;
+		bool					operator<(const Fixed &toCompare) const;
+		bool					operator>=(const Fixed &toCompare) const;
+		bool					operator<=(const Fixed &toCompare) const;
+		bool					operator==(const Fixed &toCompare) const;
+		bool					operator!=(const Fixed &toCompare) const;
+
+		Fixed &					operator+(const Fixed &toOperate);
+		Fixed &					operator-(const Fixed &toOperate);
+		Fixed &					operator*(const Fixed &toOperate);
+		Fixed &					operator/(const Fixed &toOperate);
+
 		Fixed &					operator++(void);
 		Fixed &					operator--(void);
 		Fixed &					operator++(int);
 		Fixed &					operator--(int);
+
 		static const Fixed & 	min(const Fixed &, const Fixed &);
 		static const Fixed &	max(const Fixed &, const Fixed &);
 		static Fixed &			min(Fixed &, Fixed &);
 		static Fixed &			max(Fixed &, Fixed &);
 };
 
-std::ostream & operator<<(std::ostream &, const Fixed &);
+std::ostream & operator<<(std::ostream &COUT, const Fixed &fixed);
 
 #endif
