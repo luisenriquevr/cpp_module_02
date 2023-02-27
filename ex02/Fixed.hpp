@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 15:28:51 by lvarela           #+#    #+#             */
-/*   Updated: 2023/02/23 20:53:37 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/02/27 19:33:27 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ class	Fixed {
 	private:
 		int						_value;
 		static const int		_bits = 8;
+
 	public:
 		Fixed(void);
 		Fixed(const int);
