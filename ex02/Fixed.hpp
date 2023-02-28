@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 15:28:51 by lvarela           #+#    #+#             */
-/*   Updated: 2023/02/27 19:33:27 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/02/28 21:17:35 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,15 +41,15 @@ class	Fixed {
 		bool					operator==(const Fixed &toCompare) const;
 		bool					operator!=(const Fixed &toCompare) const;
 
-		Fixed &					operator+(const Fixed &toOperate);
-		Fixed &					operator-(const Fixed &toOperate);
-		Fixed &					operator*(const Fixed &toOperate);
-		Fixed &					operator/(const Fixed &toOperate);
+		Fixed 					operator+(const Fixed &toOperate);
+		Fixed 					operator-(const Fixed &toOperate);
+		Fixed 					operator*(const Fixed &toOperate);
+		Fixed 					operator/(const Fixed &toOperate);
 
 		Fixed &					operator++(void);
 		Fixed &					operator--(void);
-		Fixed &					operator++(int);
-		Fixed &					operator--(int);
+		Fixed 					operator++(int);
+		Fixed 					operator--(int);
 
 		static const Fixed & 	min(const Fixed &, const Fixed &);
 		static const Fixed &	max(const Fixed &, const Fixed &);

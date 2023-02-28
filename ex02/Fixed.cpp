@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 16:08:33 by lvarela           #+#    #+#             */
-/*   Updated: 2023/02/27 21:19:07 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/02/28 21:20:54 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Fixed::Fixed(const int value) : _value(value << _bits) {
 
 Fixed::Fixed(const float value) {
 	std::cout << "Float constructor called" << std::endl;
-	this->_value = value * roundf(1 << this->_bits);
+	this->_value = roundf(value * (1 << this->_bits));
 }
 
 Fixed::Fixed(const Fixed &copy) {
@@ -60,45 +60,42 @@ bool	Fixed::operator!=(const Fixed &toCompare) const {
 	return this->getRawBits() != toCompare.getRawBits();
 }
 
-Fixed & Fixed::operator+(const Fixed &toOperate) {
-	Fixed res(this->toFloat() + toOperate.toFloat());
-	return res;
+Fixed	Fixed::operator+(const Fixed &toOperate) {
+	return Fixed(this->toFloat() + toOperate.toFloat());
 }
 
-Fixed & Fixed::operator-(const Fixed &toOperate) {
-	Fixed res(this->toFloat() - toOperate.toFloat());
-	return res;
+Fixed	Fixed::operator-(const Fixed &toOperate) {
+	return Fixed(this->toFloat() - toOperate.toFloat());
 }
 
-Fixed & Fixed::operator*(const Fixed &toOperate) {
-	Fixed res(this->toFloat() * toOperate.toFloat());
-	return res;
+Fixed	Fixed::operator*(const Fixed &toOperate) {
+	return Fixed(this->toFloat() * toOperate.toFloat());
 }
 
-Fixed &	Fixed::operator/(const Fixed &toOperate) {
-	Fixed res(this->toFloat() / toOperate.toFloat());
-	return res;
+Fixed	Fixed::operator/(const Fixed &toOperate) {
+	return Fixed(this->toFloat() / toOperate.toFloat());
 }
 
 Fixed &	Fixed::operator++(void) {
-	this->_value++;
+	std::cout << "void" << std::endl;
+	++this->_value;
 	return *this;
 }
 
-Fixed &	Fixed::operator--(void) {
-	this->_value--;
-	return *this;
-}
-
-Fixed &	Fixed::operator++(int) {
+Fixed	Fixed::operator++(int) {
 	Fixed tmp(*this);
-	operator++();
+	tmp._value = this->_value++;
 	return tmp;
 }
 
-Fixed &	Fixed::operator--(int) {
+Fixed &	Fixed::operator--(void) {
+	--this->_value;
+	return *this;
+}
+
+Fixed	Fixed::operator--(int) {
 	Fixed tmp(*this);
-	operator--();
+	tmp._value = this->_value--;
 	return tmp;
 }
 
@@ -116,7 +113,7 @@ int		Fixed::getRawBits(void) const {
 }
 
 float	Fixed::toFloat(void) const {
-	return (this->_value / (1 << this->_bits));
+	return ((float)(this->_value / (float)(1 << this->_bits)));
 }
 
 int		Fixed::toInt(void) const {
