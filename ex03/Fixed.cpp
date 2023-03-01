@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 16:08:33 by lvarela           #+#    #+#             */
-/*   Updated: 2023/03/01 20:20:59 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/03/01 20:47:05 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ Fixed::Fixed(const float value) {
 	this->_value = roundf(value * (1 << this->_bits));
 }
 
-Fixed::Fixed(const Fixed &copy) {
+Fixed::Fixed(const Fixed &toCopy) {
 	std::cout << "Copy constructor called" << std::endl;
-	*this = copy;
+	*this = toCopy;
 }
 
 Fixed &	Fixed::operator=(const Fixed &copy) {

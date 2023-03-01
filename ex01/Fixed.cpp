@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 16:08:33 by lvarela           #+#    #+#             */
-/*   Updated: 2023/02/27 19:02:52 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/02/28 19:14:28 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int		Fixed::getRawBits(void) const {
 // - Dividimos el input entre 2^_bits (es decir, dividimos el valor
 //   entre el factor de escala -> 1 << bits)
 float	Fixed::toFloat(void) const {
-	return (this->_value / (1 << this->_bits));
+	return ((float)this->_value / (float)(1 << this->_bits));
 }
 
 int		Fixed::toInt(void) const {
