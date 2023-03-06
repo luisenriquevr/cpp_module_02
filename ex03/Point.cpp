@@ -1,28 +1,35 @@
 #include "Point.hpp"
 
-Point::Point(void) : x(0), y(0) {
-	std::cout << "Constructor called" << std::endl;
+Point::Point() : _x(0), _y(0) {
+    std::cout << "Constructor called" << std::endl;
 }
 
-Point::~Point(void) {
-	std::cout << "Destructor called" << std::endl;
+Point::~Point() {
+    std::cout << "Destructor called" << std::endl;
 }
 
-Point::Point(const Point &toCopy) : x(toCopy.x), y(toCopy.y) {
-	std::cout << "Copy constructor called" << std::endl;
+Point::Point(const Point &toCopy) : _x(toCopy._x), _y(toCopy._y) {
+    std::cout << "Copy constructor called" << std::endl;
 }
 
-Point &	Point::operator=(const Point &toCopy) {
-	std::cout << "Assignation operator called" << std::endl;
-	return *toCopy;
+Point::Point(const float x, const float y) : _x(x), _y(y) {
 }
 
-Fixed	Point::getFixedX(void) const {
-	std::cout << "getFixedX called" << std::endl;
-	return x;
+Point &Point::operator=(const Point &toCopy) {
+    std::cout << "Assignation operator called" << std::endl;
+    if (this != &toCopy) {
+        (Fixed) this->_x = (Fixed)toCopy._x;
+        (Fixed) this->_y = (Fixed)toCopy._y;
+    }
+    return *this;
 }
 
-Fixed	Point::getFixedY(void) const {
-	std::cout << "getFixedY called" << std::endl;
-	return y;
+Fixed Point::getFixedX() const {
+    std::cout << "getFixedX called" << std::endl;
+    return _x;
+}
+
+Fixed Point::getFixedY() const {
+    std::cout << "getFixedY called" << std::endl;
+    return _y;
 }

@@ -6,28 +6,28 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 15:28:51 by lvarela           #+#    #+#             */
-/*   Updated: 2023/02/23 20:32:26 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/03/06 21:04:34 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FIXED_HPP
-# define FIXED_HPP
+#define FIXED_HPP
 
-# include <iostream>
+#include <iostream>
 
-class	Fixed {
-	private:
-		int					_value;
-		static const int	_bits = 8;
+class Fixed {
+   private:
+    int _value;
+    static const int _bits = 8;
 
-	public:
-		Fixed(void);
-		Fixed(const Fixed &toCopy);
-		Fixed & operator=(const Fixed &toCopy);
-		~Fixed();
+   public:
+    Fixed();
+    Fixed(const Fixed &toCopy);
+    Fixed &operator=(const Fixed &toCopy);
+    ~Fixed();
 
-		void				setRawBits(int const raw);
-		int					getRawBits(void) const;
+    void setRawBits(int const raw);
+    int getRawBits() const;
 };
 
 #endif

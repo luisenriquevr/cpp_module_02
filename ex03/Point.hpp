@@ -1,24 +1,26 @@
 
 #ifndef POINT_HPP
-# define POINT_HPP
+#define POINT_HPP
 
-# include <iostream>
-# include <math.h>
-# include "Fixed.hpp"
+#include <math.h>
 
-class	Point {
-	private:
-		Fixed const x;
-		Fixed const y;
+#include <iostream>
 
-	public:
-		Point(void);
-		~Point(void);
-		Point(const Point &toCopy);
-		Point &operator=(const Point &toCopy);
-		Fixed	getFixedX(void) const;
-		Fixed	getFixedY(void) const;
+#include "Fixed.hpp"
+
+class Point {
+   private:
+    const Fixed _x;
+    const Fixed _y;
+
+   public:
+    Point();
+    ~Point();
+    Point(const Point &toCopy);
+    Point(const float x, const float y);
+    Point &operator=(const Point &toCopy);
+    Fixed getFixedX() const;
+    Fixed getFixedY() const;
 };
-
 
 #endif
