@@ -1,16 +1,16 @@
 #include "Fixed.hpp"
 #include "Point.hpp"
 
+bool bsp(const Point A, const Point B, const Point C, const Point P);
+
 int main() {
-    Point a;
-    std::cout << a.getFixedX() << std::endl;
-    std::cout << a.getFixedY() << std::endl;
-    Point b(a);
-    std::cout << b.getFixedX() << std::endl;
-    std::cout << b.getFixedY() << std::endl;
-    Point c = b;
-    std::cout << c.getFixedX() << std::endl;
-    std::cout << c.getFixedY() << std::endl;
+
+    Point A(float(5), float(3));
+    Point B(float(9), float(2));
+    Point C(float(2), float(-3));
+    Point P(float(8), float(1));
+
+    std::cout << bsp(A, B, C, P) << std::endl;
 
     return 0;
 }
