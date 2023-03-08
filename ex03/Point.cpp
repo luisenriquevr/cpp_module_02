@@ -8,11 +8,12 @@ Point::~Point() {
     std::cout << "Destructor called" << std::endl;
 }
 
-Point::Point(const Point &toCopy) : _x(toCopy._x), _y(toCopy._y) {
+Point::Point(const Point &toCopy) : _x(toCopy.getFixedX), _y(toCopy.getFixedY) {
     std::cout << "Copy constructor called" << std::endl;
 }
 
 Point::Point(const float x, const float y) : _x(x), _y(y) {
+    std::cout << "Float constructor called" << std::endl;
 }
 
 Point &Point::operator=(const Point &toCopy) {
@@ -26,10 +27,10 @@ Point &Point::operator=(const Point &toCopy) {
 
 Fixed Point::getFixedX() const {
     std::cout << "getFixedX called" << std::endl;
-    return _x;
+    return this->_x;
 }
 
 Fixed Point::getFixedY() const {
     std::cout << "getFixedY called" << std::endl;
-    return _y;
+    return this->_y;
 }

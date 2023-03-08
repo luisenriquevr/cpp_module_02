@@ -1,6 +1,20 @@
 #include "Point.hpp"
 #include "Fixed.hpp"
 
+static Fixed absolute(Fixed nbr) {
+	if (nbr < 0)
+		return nbr * -1;
+	return nbr;
+}
+
+static Fixed area(const Point A, const Point B, const Point C) {
+	Fixed BAx = B.getFixedX() - A.getFixedX();
+	Fixed CAy = C.getFixedY() - A.getFixedY();
+	Fixed CAx = C.getFixedX() - A.getFixedX();
+	Fixed BAy = B.getFixedY() - A.getFixedY();
+	
+}
+
 bool bsp(const Point A, const Point B, const Point C, const Point P) {
 	Fixed totalArea = (((B.getFixedX() - A.getFixedX())) * ((C.getFixedY() - A.getFixedY()) - (C.getFixedX() - A.getFixedX())) * ((B.getFixedY() - A.getFixedY()))) / 2;
 

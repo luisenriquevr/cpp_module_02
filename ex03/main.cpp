@@ -1,8 +1,6 @@
 #include "Fixed.hpp"
 #include "Point.hpp"
 
-bool bsp(const Point A, const Point B, const Point C, const Point P);
-
 int main() {
 
     Point A(float(5), float(3));
