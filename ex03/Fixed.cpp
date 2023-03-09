@@ -6,38 +6,38 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 16:08:33 by lvarela           #+#    #+#             */
-/*   Updated: 2023/03/06 21:04:34 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/03/09 20:42:03 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
 Fixed::Fixed() : _value(0) {
-    std::cout << "Default constructor called" << std::endl;
+    //std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed(const int value) : _value(value << _bits) {
-    std::cout << "Int constructor called" << std::endl;
+    //std::cout << "Int constructor called" << std::endl;
 }
 
 Fixed::Fixed(const float value) {
-    std::cout << "Float constructor called" << std::endl;
+    //std::cout << "Float constructor called" << std::endl;
     this->_value = roundf(value * (1 << this->_bits));
 }
 
 Fixed::Fixed(const Fixed &toCopy) {
-    std::cout << "Copy constructor called" << std::endl;
+    //std::cout << "Copy constructor called" << std::endl;
     *this = toCopy;
 }
 
 Fixed &Fixed::operator=(const Fixed &copy) {
-    std::cout << "Assignation operator called" << std::endl;
+    //std::cout << "Assignation operator called" << std::endl;
     this->_value = copy.getRawBits();
     return *this;
 }
 
 Fixed::~Fixed() {
-    std::cout << "Destructor called" << std::endl;
+    //std::cout << "Destructor called" << std::endl;
 }
 
 void Fixed::setRawBits(const int raw) {
@@ -45,7 +45,7 @@ void Fixed::setRawBits(const int raw) {
 }
 
 int Fixed::getRawBits() const {
-    std::cout << "getRawBits called" << std::endl;
+    //std::cout << "getRawBits called" << std::endl;
     return this->_value;
 }
 

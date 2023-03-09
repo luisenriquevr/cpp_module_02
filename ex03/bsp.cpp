@@ -12,34 +12,20 @@ static Fixed area(const Point A, const Point B, const Point C) {
 	Fixed CAy = C.getFixedY() - A.getFixedY();
 	Fixed CAx = C.getFixedX() - A.getFixedX();
 	Fixed BAy = B.getFixedY() - A.getFixedY();
-	
+
+	return absolute(((BAx * CAy) - (BAy * CAx))/2);
 }
 
 bool bsp(const Point A, const Point B, const Point C, const Point P) {
-	Fixed totalArea = (((B.getFixedX() - A.getFixedX())) * ((C.getFixedY() - A.getFixedY()) - (C.getFixedX() - A.getFixedX())) * ((B.getFixedY() - A.getFixedY()))) / 2;
+	Fixed ABCarea = area(A, B, C);
+	Fixed PABarea = area(P, A, B);
+	Fixed PCBarea = area(P, C, B);
+	Fixed PACarea = area(P, A, C);
 
-	if (totalArea < Fixed(0))
-		totalArea = totalArea * -1;
-
-	Fixed PABarea = (((B.getFixedX() - P.getFixedX())) * ((A.getFixedY() - P.getFixedY()) - (A.getFixedX() - P.getFixedX())) * ((B.getFixedY() - P.getFixedY()))) / 2;
-
-	if (PABarea < Fixed(0))
-		PABarea = PABarea * -1;
-
-	Fixed PCBarea = (((C.getFixedX() - P.getFixedX())) * ((B.getFixedY() - P.getFixedY()) - (B.getFixedX() - P.getFixedX())) * ((C.getFixedY() - P.getFixedY()))) / 2;
-
-	if (PCBarea < Fixed(0))
-		PCBarea = PCBarea * -1;
-
-	Fixed PACarea = (((C.getFixedX() - P.getFixedX())) * ((A.getFixedY() - P.getFixedY()) - (A.getFixedX() - P.getFixedX())) * ((C.getFixedY() - P.getFixedY()))) / 2;
-
-	if (PCBarea < Fixed(0))
-		PCBarea = PCBarea * -1;
-
-	if ((PABarea + PCBarea + PACarea) == totalArea)
-		return true;
-	else
+	if (ABCarea == 0 || PCBarea == 0 || PACarea == 0)
 		return false;
+
+	return (PABarea + PCBarea + PACarea) == ABCarea;
 }
 
 /*
