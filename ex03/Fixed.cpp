@@ -30,9 +30,9 @@ Fixed::Fixed(const Fixed &toCopy) {
     *this = toCopy;
 }
 
-Fixed &Fixed::operator=(const Fixed &copy) {
+Fixed &Fixed::operator=(const Fixed &toCopy) {
     //std::cout << "Assignation operator called" << std::endl;
-    this->_value = copy.getRawBits();
+    this->_value = toCopy.getRawBits();
     return *this;
 }
 
