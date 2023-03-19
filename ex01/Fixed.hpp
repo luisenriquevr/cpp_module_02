@@ -6,9 +6,11 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 15:28:51 by lvarela           #+#    #+#             */
-/*   Updated: 2023/03/06 21:04:34 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/03/19 13:07:27 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#pragma once
 
 #ifndef FIXED_HPP
 #define FIXED_HPP

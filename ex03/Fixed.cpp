@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 16:08:33 by lvarela           #+#    #+#             */
-/*   Updated: 2023/03/09 20:42:03 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/03/19 13:07:29 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ Fixed::Fixed(const Fixed &toCopy) {
     *this = toCopy;
 }
 
-Fixed &Fixed::operator=(const Fixed &copy) {
+Fixed &Fixed::operator=(const Fixed &toCopy) {
     //std::cout << "Assignation operator called" << std::endl;
-    this->_value = copy.getRawBits();
+    this->_value = toCopy.getRawBits();
     return *this;
 }
 

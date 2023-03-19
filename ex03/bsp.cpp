@@ -1,31 +1,31 @@
-#include "Point.hpp"
 #include "Fixed.hpp"
+#include "Point.hpp"
 
 static Fixed absolute(Fixed nbr) {
-	if (nbr < 0)
-		return nbr * -1;
-	return nbr;
+    if (nbr < 0)
+        return nbr * -1;
+    return nbr;
 }
 
 static Fixed area(const Point A, const Point B, const Point C) {
-	Fixed BAx = B.getFixedX() - A.getFixedX();
-	Fixed CAy = C.getFixedY() - A.getFixedY();
-	Fixed CAx = C.getFixedX() - A.getFixedX();
-	Fixed BAy = B.getFixedY() - A.getFixedY();
+    Fixed BAx = B.getFixedX() - A.getFixedX();
+    Fixed CAy = C.getFixedY() - A.getFixedY();
+    Fixed CAx = C.getFixedX() - A.getFixedX();
+    Fixed BAy = B.getFixedY() - A.getFixedY();
 
-	return absolute(((BAx * CAy) - (BAy * CAx))/2);
+    return absolute(((BAx * CAy) - (BAy * CAx)) / 2);
 }
 
 bool bsp(const Point A, const Point B, const Point C, const Point P) {
-	Fixed ABCarea = area(A, B, C);
-	Fixed PABarea = area(P, A, B);
-	Fixed PCBarea = area(P, C, B);
-	Fixed PACarea = area(P, A, C);
+    Fixed ABCarea = area(A, B, C);
+    Fixed PABarea = area(P, A, B);
+    Fixed PCBarea = area(P, C, B);
+    Fixed PACarea = area(P, A, C);
 
-	if (ABCarea == 0 || PCBarea == 0 || PACarea == 0)
-		return false;
+    if (ABCarea == 0 || PCBarea == 0 || PACarea == 0)
+        return false;
 
-	return (PABarea + PCBarea + PACarea) == ABCarea;
+    return (PABarea + PCBarea + PACarea) == ABCarea;
 }
 
 /*
