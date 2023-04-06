@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 16:08:33 by lvarela           #+#    #+#             */
-/*   Updated: 2023/03/19 13:07:27 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/04/06 18:06:55 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Fixed::Fixed(const int value) : _value(value << _bits) {
 // - Multiplicamos el valor por el factor de escala. (Ej: valor = 2,5; 2,5 es 10,1 en binario;
 //   10,1 * 00000001.00000000 = 00000010.10000000; guardamos 000001010000000 en el int
 //	 sabiendo que la coma está a 8 bits)
-Fixed::Fixed(const float value) : _value(value * roundf(1 << _bits)) {
+Fixed::Fixed(const float value) : _value(roundf(value * (1 << _bits))) {
     std::cout << "Float constructor called" << std::endl;
 }
 
@@ -73,7 +73,7 @@ float Fixed::toFloat() const {
 }
 
 int Fixed::toInt() const {
-    return (this->_value << this->_bits);
+    return (this->_value >> this->_bits);
 }
 
 std::ostream &operator<<(std::ostream &COUT, const Fixed &fixed) {

@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 16:38:33 by lvarela           #+#    #+#             */
-/*   Updated: 2023/03/19 13:07:29 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/04/06 18:30:56 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main() {
     Fixed a;
-    Fixed const b(Fixed(5.05f) + Fixed(2));
+    Fixed const b(Fixed(5.05f) * Fixed(2));
     Fixed c(Fixed(5.05f) - Fixed(4.05f));
     std::cout << "-  Valor de b (Suma 5.05f + 2): --- " << b << std::endl;
     std::cout << "-  Valor de c (Rest 5.05f + 4.05): --- " << c << std::endl;
