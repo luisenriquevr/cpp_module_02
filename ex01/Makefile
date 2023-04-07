@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+         #
+#    By: lvarela <lvarela@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/22 18:00:26 by lvarela           #+#    #+#              #
-#    Updated: 2023/03/19 13:07:27 by lvarela          ###   ########.fr        #
+#    Updated: 2023/04/07 14:00:59 by lvarela          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,4 +34,4 @@ fclean	:	clean
 
 re		:	fclean all
 
-.PHONY	:	all $(NAME) clean fclean re
+.PHONY	:	all clean fclean re
