@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 15:28:51 by lvarela           #+#    #+#             */
-/*   Updated: 2023/03/19 13:07:29 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/05/01 15:04:16 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,6 @@ class Fixed {
     static Fixed max(Fixed &a, Fixed &b);
 };
 
-std::ostream &operator<<(std::ostream &COUT, const Fixed &fixed);
+std::ostream    &operator<<(std::ostream &COUT, const Fixed &fixed);
 
 #endif

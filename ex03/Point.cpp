@@ -35,7 +35,7 @@ Fixed Point::getFixedY() const {
     return this->_y;
 }
 
-std::ostream &operator<<(std::ostream &COUT, const Point &point) {
+std::ostream    &operator<<(std::ostream &COUT, const Point &point) {
     COUT << "(" << point.getFixedX().toFloat() << ", " << point.getFixedY().toFloat() << ")";
     return COUT;
 }

@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 16:08:33 by lvarela           #+#    #+#             */
-/*   Updated: 2023/04/06 18:23:48 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/05/01 15:04:16 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,7 +134,7 @@ Fixed Fixed::max(Fixed &a, Fixed &b) {
     return a > b ? a : b;
 }
 
-std::ostream &operator<<(std::ostream &COUT, const Fixed &fixed) {
+std::ostream    &operator<<(std::ostream &COUT, const Fixed &fixed) {
     COUT << fixed.toFloat();
     return COUT;
 }

@@ -23,7 +23,7 @@ class Point {
     Fixed getFixedY() const;
 };
 
-std::ostream &operator<<(std::ostream &COUT, const Point &point);
+std::ostream    &operator<<(std::ostream &COUT, const Point &point);
 
 bool bsp(const Point A, const Point B, const Point C, const Point P);
 
